@@ -17,11 +17,10 @@ import org.junit.runners.Parameterized.Parameters;
 public class GildedRoseTest {
 
 	@Parameters
-	public static Collection<	Object[]> data() {
+	public static Collection<Object[]> data() {
 		Collection<Object[]> data = new ArrayList<Object[]>();
-		data.addAll(Arrays
-				.asList(new Object[][] { {
-						"At the end of each day our system lowers both quality and sell-in for every item",
+		data.addAll(Arrays.asList(
+				new Object[][] { { "At the end of each day our system lowers both quality and sell-in for every item",
 						"Item with arbitrary name", 5, 49, 4, 48 } }));
 		return data;
 	}
@@ -35,8 +34,8 @@ public class GildedRoseTest {
 
 	Item item;
 
-	public GildedRoseTest(String message, String itemName, int sellIn,
-			int quality, int expectedSellIn, int expectedQuality) {
+	public GildedRoseTest(String message, String itemName, int sellIn, int quality, int expectedSellIn,
+			int expectedQuality) {
 		this.message = message;
 		this.itemName = itemName;
 		this.sellIn = sellIn;
@@ -63,5 +62,5 @@ public class GildedRoseTest {
 		GildedRose.updateQuality();
 		assertEquals(message + " SellIn", expectedSellIn, item.getSellIn());
 	}
-	
+
 }
